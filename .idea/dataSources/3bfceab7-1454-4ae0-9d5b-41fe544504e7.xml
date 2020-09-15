@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Supermarket.db">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="Employee"/>
+    <table id="7" parent="2" name="ItemDetails"/>
+    <table id="8" parent="2" name="Login"/>
+    <table id="9" parent="2" name="OrderDetails"/>
+    <table id="10" parent="2" name="ProductCategory"/>
+    <table id="11" parent="2" name="SupplierDetails"/>
+    <table id="12" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="13" parent="2" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <column id="14" parent="6" name="EmployeeID">
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="15" parent="6" name="FirstName">
+      <Position>1</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <column id="16" parent="6" name="MiddleName">
+      <Position>2</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <column id="17" parent="6" name="LastName">
+      <Position>3</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <column id="18" parent="6" name="Age">
+      <Position>4</Position>
+      <DataType>INT|0</DataType>
+    </column>
+    <column id="19" parent="6" name="DateOfBirth">
+      <Position>5</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <column id="20" parent="6" name="PhoneNumber">
+      <Position>6</Position>
+      <DataType>INT|0</DataType>
+    </column>
+    <column id="21" parent="6" name="Address">
+      <Position>7</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <column id="22" parent="6" name="City">
+      <Position>8</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <key id="23" parent="6">
+      <ColNames>EmployeeID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="7" name="ItemID">
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="25" parent="7" name="ItemName">
+      <Position>1</Position>
+      <DataType>TEXT|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="7" name="ItemNumber">
+      <Position>2</Position>
+      <DataType>INTEGER|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="7" name="UnitPrice">
+      <Position>3</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="28" parent="7" name="QuantityInStock">
+      <Position>4</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="29" parent="7" name="CategoryID">
+      <Position>5</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="30" parent="7" name="Category">
+      <Position>6</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <column id="31" parent="7" name="SupplierID">
+      <Position>7</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="32" parent="7" name="Supplier">
+      <Position>8</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <column id="33" parent="7" name="Barcode">
+      <Position>9</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <index id="34" parent="7" name="ItemDetails_ItemNumber_uindex">
+      <ColNames>ItemNumber</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="35" parent="7">
+      <ColNames>ItemID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="36" parent="8" name="UserID">
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="37" parent="8" name="UserName">
+      <Position>1</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <column id="38" parent="8" name="Password">
+      <Position>2</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <column id="39" parent="8" name="Role">
+      <Position>3</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <column id="40" parent="8" name="EmployeeName">
+      <Position>4</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <key id="41" parent="8">
+      <ColNames>UserID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="42" parent="9" name="OrderID">
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="43" parent="9" name="ItemID">
+      <Position>1</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="44" parent="9" name="ItemName">
+      <Position>2</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <column id="45" parent="9" name="CategoryID">
+      <Position>3</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="46" parent="9" name="Category">
+      <Position>4</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="47" parent="9" name="UnitPrice">
+      <Position>5</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="48" parent="9" name="Quantity">
+      <Position>6</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="49" parent="9" name="Total">
+      <Position>7</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="50" parent="9" name="EmployeeID">
+      <Position>8</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="51" parent="9" name="EmployeeName">
+      <Position>9</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <key id="52" parent="9">
+      <ColNames>OrderID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="53" parent="9" name="OrderDetails_ItemDetails_ItemID_fk">
+      <ColNames>ItemID</ColNames>
+      <RefTableName>ItemDetails</RefTableName>
+      <RefColNames>ItemID</RefColNames>
+    </foreign-key>
+    <foreign-key id="54" parent="9" name="OrderDetails_ProductCategory_CategoryID_fk">
+      <ColNames>CategoryID</ColNames>
+      <RefTableName>ProductCategory</RefTableName>
+      <RefColNames>CategoryID</RefColNames>
+    </foreign-key>
+    <foreign-key id="55" parent="9" name="OrderDetails_Employee_EmployeeID_fk">
+      <ColNames>EmployeeID</ColNames>
+      <RefTableName>Employee</RefTableName>
+      <RefColNames>EmployeeID</RefColNames>
+    </foreign-key>
+    <column id="56" parent="10" name="CategoryID">
+      <DataType>INTEGER|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="10" name="CategoryName">
+      <Position>1</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <key id="58" parent="10">
+      <ColNames>CategoryID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="59" parent="11" name="SupplierID">
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="60" parent="11" name="SupplierName">
+      <Position>1</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <column id="61" parent="11" name="PhoneNumber">
+      <Position>2</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="62" parent="11" name="Address">
+      <Position>3</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <column id="63" parent="11" name="Email">
+      <Position>4</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <key id="64" parent="11">
+      <ColNames>SupplierID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="65" parent="12" name="type">
+      <DataType>text|0</DataType>
+    </column>
+    <column id="66" parent="12" name="name">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="67" parent="12" name="tbl_name">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="68" parent="12" name="rootpage">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="69" parent="12" name="sql">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="70" parent="13" name="name"/>
+    <column id="71" parent="13" name="seq">
+      <Position>1</Position>
+    </column>
+  </database-model>
+</dataSource>

@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: C:\Users\Olamijulo\IdeaProjects\Supermarket\out\production
+ \Supermarket\sample\Main.class
+Main-Class: sample.Main
+

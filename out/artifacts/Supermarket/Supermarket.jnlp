@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Supermarket.jnlp">
+  <information>
+    <title>Supermarket</title>
+    <vendor>Unknown</vendor>
+    <description>Supermarket</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Supermarket.jar" size="62484" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="C:\Users\Olamijulo\IdeaProjects\Supermarket\out\production\Supermarket\sample\Main.class"  name="Supermarket" />
+  <update check="background"/>
+</jnlp>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="app" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="722.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Category">
+   <children>
+      <Pane fx:id="" prefHeight="722.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="96.0" prefWidth="1200.0" style="-fx-background-color: #1a1a00;">
+               <children>
+                  <Label layoutX="33.0" layoutY="25.0" text="Supermarket" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="42.0" fitWidth="36.0" layoutX="1086.0" layoutY="7.0" onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/minimize-white.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="1122.0" layoutY="7.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/close.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <JFXButton layoutX="1093.0" layoutY="52.0" onMouseClicked="#logOut" prefHeight="36.0" prefWidth="75.0" style="-fx-background-color: #4d4d00; -fx-background-radius: 50px; -fx-border-color: #333300; -fx-border-radius: 50px;" text="LOG OUT" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <Label layoutX="693.0" layoutY="63.0" text="User Name:" textFill="WHITE">
+                     <font>
+                        <Font name="Futura Light BT" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="userUserName" layoutX="781.0" layoutY="53.0" prefHeight="30.0" prefWidth="176.0" style="-fx-border-color: white;" textFill="WHITE">
+                     <font>
+                        <Font name="Futura Light BT" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutY="96.0" prefHeight="626.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Label layoutX="240.0" layoutY="152.0" text="Item Number:">
+                     <font>
+                        <Font name="Futura Heavy BT" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="174.0" layoutY="111.0" prefHeight="20.0" prefWidth="36.0" text="Label" visible="false" />
+                  <Label layoutX="709.0" layoutY="152.0" text="Item Name:">
+                     <font>
+                        <Font name="Futura Heavy BT" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="969.0" layoutY="341.0" text="Unit Price:">
+                     <font>
+                        <Font name="Futura Heavy BT" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="458.0" layoutY="153.0" text="Category Name:">
+                     <font>
+                        <Font name="Futura Heavy BT" size="12.0" />
+                     </font>
+                  </Label>
+                  <TableView layoutX="228.0" layoutY="200.0" prefHeight="358.0" prefWidth="694.0">
+                    <columns>
+                      <TableColumn fx:id="userItemNumberColumn" prefWidth="108.0" text="Item Number" />
+                      <TableColumn fx:id="userItemNameColumn" prefWidth="119.0" text="Item Name" />
+                        <TableColumn fx:id="userUnitPriceColumn" minWidth="0.0" prefWidth="85.0" text="UnitPrice" />
+                        <TableColumn fx:id="userQuantityColumn" minWidth="8.0" prefWidth="67.0" text="Quantity" />
+                        <TableColumn fx:id="userCategoryColumn" minWidth="3.0" prefWidth="110.0" text="Category" />
+                        <TableColumn fx:id="userEmployeeColumn" minWidth="3.0" prefWidth="204.0" text="Employee" />
+                    </columns>
+                  </TableView>
+                  <JFXComboBox fx:id="userCategoryName" layoutX="571.0" layoutY="148.0" onAction="#CategoryAutoFill" prefHeight="25.0" prefWidth="116.0" />
+                  <JFXComboBox fx:id="userItemName" layoutX="794.0" layoutY="148.0" onAction="#UserItemNameAutoFill" prefHeight="25.0" prefWidth="127.0" />
+                  <JFXButton layoutX="989.0" layoutY="52.0" style="-fx-background-color: #1a1a00; -fx-border-radius: 50px; -fx-background-radius: 50px;" text="Search" textFill="#fcf8f8">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextField fx:id="userSearch" layoutX="843.0" layoutY="55.0" />
+                  <Label layoutX="974.0" layoutY="398.0" text="In Stock:">
+                     <font>
+                        <Font name="Futura Heavy BT" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="969.0" layoutY="282.0" text="Quantity:">
+                     <font>
+                        <Font name="Futura Heavy BT" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="userQuantity" layoutX="1048.0" layoutY="277.0" prefHeight="25.0" prefWidth="75.0" />
+                  <Label fx:id="userUnitPrice" layoutX="1051.0" layoutY="327.0" prefHeight="30.0" prefWidth="59.0" textFill="#0f02f8">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="userInStock" layoutX="1051.0" layoutY="390.0" prefHeight="30.0" prefWidth="59.0" textFill="#000000d0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="userItemNumber" layoutX="338.0" layoutY="145.0" prefHeight="30.0" prefWidth="110.0" textFill="#2d8326">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXButton layoutX="973.0" layoutY="471.0" onMouseClicked="#Transaction" style="-fx-background-color: #0a6b3f;" text="Transact" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

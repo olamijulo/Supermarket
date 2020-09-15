@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginPane">
+   <children>
+      <Pane fx:id="loginPane" layoutX="53.0" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Pane layoutX="31.0" prefHeight="700.0" prefWidth="457.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <JFXTextField fx:id="userName" layoutX="209.0" layoutY="379.0" prefHeight="18.0" prefWidth="198.0" style="-fx-border-width: 0 0 0 0;" />
+                  <JFXPasswordField fx:id="password" layoutX="208.0" layoutY="439.0" prefHeight="26.0" prefWidth="198.0" style="-fx-border-width: 0 0 0 0;" />
+                  <JFXButton contentDisplay="CENTER" layoutX="287.0" layoutY="580.0" onMouseClicked="#LoginAdd" prefHeight="35.0" prefWidth="62.0" style="-fx-background-color: #4d4d00; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: #333300;" text="ADD" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton contentDisplay="CENTER" layoutX="195.0" layoutY="580.0" onMouseClicked="#LoginUpdate" prefHeight="35.0" prefWidth="84.0" style="-fx-background-color: #4d4d00; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: #333300;" text="UPDATE" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton contentDisplay="CENTER" layoutX="103.0" layoutY="580.0" onMouseClicked="#LoginDelete" prefHeight="35.0" prefWidth="84.0" style="-fx-background-color: #4d4d00; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: #333300;" text="DELETE" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton contentDisplay="CENTER" layoutX="-10.0" layoutY="62.0" onMouseClicked="#logOut" prefHeight="35.0" prefWidth="73.0" style="-fx-background-color: #4d4d00; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: #333300;" text="LOG OUT" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton contentDisplay="CENTER" layoutX="356.0" layoutY="580.0" onMouseClicked="#LoginTableDisplay" prefHeight="35.0" prefWidth="84.0" style="-fx-background-color: #4d4d00; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: #333300;" text="TABLE" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXComboBox fx:id="roleCombo" labelFloat="true" layoutX="208.0" layoutY="497.0" prefHeight="10.0" prefWidth="108.0" />
+                  <JFXComboBox fx:id="userIDCombo" layoutX="219.0" layoutY="254.0" onAction="#autoDisplay" prefHeight="18.0" prefWidth="84.0" />
+                  <JFXButton contentDisplay="CENTER" layoutX="17.0" layoutY="580.0" onMouseClicked="#LoginClear" prefHeight="35.0" prefWidth="84.0" style="-fx-background-color: #4d4d00; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: #333300;" text="CLEAR" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <Label layoutX="45.0" layoutY="259.0" text="LoginID:" />
+                  <Label layoutX="43.0" layoutY="377.0" text="User Name:" />
+                  <Label layoutX="43.0" layoutY="443.0" text="Password:" />
+                  <Label layoutX="43.0" layoutY="502.0" text="Role:" />
+                  <JFXTextField fx:id="employeeName" layoutX="212.0" layoutY="311.0" prefHeight="18.0" prefWidth="198.0" style="-fx-border-width: 0 0 0 0;" />
+                  <Label layoutX="46.0" layoutY="315.0" text="Employee Name:" />
+               </children>
+            </Pane>
+            <JFXButton contentDisplay="CENTER" layoutX="897.0" layoutY="158.0" onMouseClicked="#LoginSearch" prefHeight="35.0" prefWidth="84.0" style="-fx-background-color: #4d4d00; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: #333300;" text="Search" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <TableView fx:id="table" layoutX="542.0" layoutY="259.0" onMouseClicked="#loginTable" prefHeight="372.0" prefWidth="547.0" style="-fx-border-color: #1a1a00;">
+              <columns>
+                <TableColumn fx:id="userIDColumn" prefWidth="75.0" text="UserID" />
+                <TableColumn fx:id="userNameColumn" prefWidth="140.0" text="User name" />
+                  <TableColumn fx:id="passwordColumn" prefWidth="111.0" text="Password" />
+                  <TableColumn fx:id="roleColumn" prefWidth="95.0" text="Role" />
+                  <TableColumn fx:id="employeeNameColumn" minWidth="5.0" prefWidth="124.0" text="Employee Name" />
+              </columns>
+            </TableView>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="1129.0" layoutY="23.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/close.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <JFXTextField fx:id="searchBox" layoutX="740.0" layoutY="165.0" prefHeight="28.0" prefWidth="144.0" />
+            <ImageView fitHeight="42.0" fitWidth="36.0" layoutX="1100.0" layoutY="23.0" onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/minimize.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label layoutX="349.0" layoutY="65.0" text="LOGIN DETAILS" underline="true">
+               <font>
+                  <Font name="Futura Light BT" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane prefHeight="700.0" prefWidth="62.0" style="-fx-background-color: #1a1a00;">
+         <children>
+            <Pane fx:id="history" layoutX="4.0" layoutY="366.0" onMouseEntered="#glow" onMouseExited="#normal" prefHeight="55.0" prefWidth="55.0">
+               <children>
+                  <ImageView fitHeight="49.0" fitWidth="36.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/history.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="stock" layoutX="4.0" layoutY="283.0" onMouseClicked="#stockLink" onMouseEntered="#glow" onMouseExited="#normal" prefHeight="55.0" prefWidth="55.0">
+               <children>
+                  <ImageView fitHeight="49.0" fitWidth="49.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/stock.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="employee" layoutX="4.0" layoutY="201.0" onMouseClicked="#employeeLink" onMouseEntered="#glow" onMouseExited="#normal" prefHeight="55.0" prefWidth="55.0">
+               <children>
+                  <ImageView fitHeight="55.0" fitWidth="49.0" layoutX="2.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/employee.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="login" layoutX="4.0" layoutY="123.0" onMouseEntered="#glow" onMouseExited="#normal" prefHeight="55.0" prefWidth="55.0">
+               <children>
+                  <ImageView fitHeight="49.0" fitWidth="49.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/login.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="supplier" layoutX="4.0" layoutY="531.0" onMouseClicked="#supplierLink" onMouseEntered="#glow" onMouseExited="#normal" prefHeight="55.0" prefWidth="55.0">
+               <children>
+                  <ImageView fitHeight="49.0" fitWidth="36.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/supplier.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <effect>
+                  <Glow />
+               </effect>
+            </Pane>
+            <Pane fx:id="category" layoutX="4.0" layoutY="451.0" onMouseClicked="#categoryLink" onMouseEntered="#glow" onMouseExited="#normal" prefHeight="55.0" prefWidth="55.0">
+               <children>
+                  <ImageView fitHeight="49.0" fitWidth="36.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/category-grey.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+               <effect>
+                  <Glow />
+               </effect>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

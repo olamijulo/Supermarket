@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Stock">
+   <children>
+      <Pane layoutX="62.0" prefHeight="700.0" prefWidth="1138.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Label layoutX="88.0" layoutY="433.0" text="Category:" />
+            <Label layoutX="88.0" layoutY="206.0" text="Item Number:" />
+            <Label layoutX="88.0" layoutY="263.0" text="Item Name:" />
+            <Label layoutX="88.0" layoutY="377.0" text="In Stock:" />
+            <Label layoutX="88.0" layoutY="320.0" text="Unit Price:: " />
+            <Label layoutX="88.0" layoutY="153.0" text="ItemID: " />
+            <Label alignment="CENTER" ellipsisString="" layoutX="431.0" layoutY="65.0" text="STOCK" underline="true">
+               <font>
+                  <Font name="Futura Light BT" size="48.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <Label layoutX="88.0" layoutY="489.0" text="Supplier:" />
+            <Label layoutX="88.0" layoutY="541.0" text="Bar Code:" />
+            <JFXComboBox fx:id="itemID" layoutX="213.0" layoutY="149.0" onAction="#autoDisplay" prefHeight="25.0" prefWidth="73.0" />
+            <JFXTextField fx:id="itemNumber" layoutX="213.0" layoutY="202.0" />
+            <JFXTextField fx:id="itemName" layoutX="213.0" layoutY="259.0" />
+            <JFXTextField fx:id="unitPrice" cacheShape="false" layoutX="213.0" layoutY="316.0" prefHeight="25.0" prefWidth="116.0" />
+            <JFXTextField fx:id="inStock" layoutX="213.0" layoutY="373.0" prefHeight="25.0" prefWidth="73.0" />
+            <JFXComboBox fx:id="category" layoutX="213.0" layoutY="429.0" prefHeight="25.0" prefWidth="135.0" />
+            <JFXComboBox fx:id="supplier" layoutX="213.0" layoutY="485.0" prefHeight="25.0" prefWidth="135.0" />
+            <Label fx:id="barCode" layoutX="216.0" layoutY="541.0" prefHeight="49.0" prefWidth="227.0">
+               <font>
+                  <Font name="CCodeUPCEAN_HRTS3_Trial" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <JFXButton buttonType="RAISED" layoutX="381.0" layoutY="612.0" onMouseClicked="#printBarcode" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #0a6b3f;" text="Print " textFill="WHITE" />
+            <JFXButton contentDisplay="CENTER" layoutX="362.0" layoutY="650.0" onMouseClicked="#add" prefHeight="35.0" prefWidth="62.0" style="-fx-background-color: #4d4d00; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: #333300;" text="ADD" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton contentDisplay="CENTER" layoutX="270.0" layoutY="650.0" onMouseClicked="#update" prefHeight="35.0" prefWidth="84.0" style="-fx-background-color: #4d4d00; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: #333300;" text="UPDATE" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton contentDisplay="CENTER" layoutX="178.0" layoutY="650.0" onMouseClicked="#delete" prefHeight="35.0" prefWidth="84.0" style="-fx-background-color: #4d4d00; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: #333300;" text="DELETE" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton contentDisplay="CENTER" layoutX="431.0" layoutY="650.0" onMouseClicked="#DisplayTable" prefHeight="35.0" prefWidth="84.0" style="-fx-background-color: #4d4d00; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: #333300;" text="TABLE" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton contentDisplay="CENTER" layoutX="92.0" layoutY="650.0" onMouseClicked="#clear" prefHeight="35.0" prefWidth="84.0" style="-fx-background-color: #4d4d00; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: #333300;" text="CLEAR" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ScrollPane layoutX="526.0" layoutY="184.0" prefWidth="578.0">
+               <content>
+                  <TableView fx:id="table" prefHeight="439.0" prefWidth="700.0">
+                    <columns>
+                      <TableColumn fx:id="itemIDColumn" prefWidth="75.0" text="ItemID" />
+                      <TableColumn fx:id="itemNameColumn" prefWidth="75.0" text="ItemName" />
+                        <TableColumn fx:id="itemNumberColumn" prefWidth="126.0" text="ItemNumber" />
+                        <TableColumn fx:id="categoryColumn" prefWidth="82.0" text="Category" />
+                        <TableColumn fx:id="unitPriceColumn" prefWidth="74.0" text="UnitPrice" />
+                        <TableColumn fx:id="inStockColumn" prefWidth="67.0" text="InStock" />
+                        <TableColumn fx:id="barcodeColumn" prefWidth="74.0" text="Barcode" />
+                        <TableColumn fx:id="supplierColumn" prefWidth="126.0" text="Supplier" />
+                    </columns>
+                  </TableView>
+               </content>
+            </ScrollPane>
+            <JFXButton contentDisplay="CENTER" layoutX="32.0" layoutY="35.0" onMouseClicked="#logOut" prefHeight="35.0" prefWidth="73.0" style="-fx-background-color: #4d4d00; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: #333300;" text="LOG OUT" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="219.0" layoutY="612.0" onMouseClicked="#getItemNumber" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #0a6b3f;" text="Generate" textFill="WHITE" />
+         </children>
+      </Pane>
+      <ImageView fitHeight="42.0" fitWidth="36.0" layoutX="1093.0" layoutY="23.0" onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/minimize.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="1125.0" layoutY="23.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/close.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Pane fx:id="supplierButton" prefHeight="700.0" prefWidth="62.0" style="-fx-background-color: #1a1a00;">
+         <children>
+            <Pane fx:id="history" layoutX="4.0" layoutY="366.0" onMouseEntered="#glow" onMouseExited="#normal" prefHeight="55.0" prefWidth="55.0">
+               <children>
+                  <ImageView fitHeight="49.0" fitWidth="36.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/history.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="stock" layoutX="4.0" layoutY="283.0" onMouseEntered="#glow" onMouseExited="#normal" prefHeight="55.0" prefWidth="55.0">
+               <children>
+                  <ImageView fitHeight="49.0" fitWidth="49.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/stock.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="employee" layoutX="4.0" layoutY="201.0" onMouseClicked="#employeeLink" onMouseEntered="#glow" onMouseExited="#normal" prefHeight="55.0" prefWidth="55.0">
+               <children>
+                  <ImageView fitHeight="55.0" fitWidth="49.0" layoutX="2.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/employee.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="login" layoutX="4.0" layoutY="123.0" onMouseClicked="#loginLink" onMouseEntered="#glow" onMouseExited="#normal" prefHeight="55.0" prefWidth="55.0">
+               <children>
+                  <ImageView fitHeight="49.0" fitWidth="49.0" layoutX="3.0" layoutY="3.0" onMouseClicked="#loginLink" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/login.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="categoryButton" layoutX="4.0" layoutY="451.0" onMouseClicked="#categoryLink" onMouseEntered="#glow" onMouseExited="#normal" prefHeight="55.0" prefWidth="55.0">
+         <children>
+            <ImageView fitHeight="49.0" fitWidth="36.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/category-grey.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+         <effect>
+            <Glow />
+         </effect>
+      </Pane>
+      <Pane fx:id="supplierButton" layoutX="4.0" layoutY="531.0" onMouseClicked="#supplierLink" onMouseEntered="#glow" onMouseExited="#normal" prefHeight="55.0" prefWidth="55.0">
+         <children>
+            <ImageView fitHeight="49.0" fitWidth="36.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <image>
+                  <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/supplier.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <Glow />
+         </effect>
+      </Pane>
+   </children>
+</AnchorPane>

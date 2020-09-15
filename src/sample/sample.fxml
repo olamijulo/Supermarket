@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="login" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="457.0" prefWidth="472.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Pane fx:id="" prefHeight="458.0" prefWidth="472.0" style="-fx-background-color: #1a1a00;">
+         <children>
+            <JFXButton layoutX="272.0" layoutY="388.0" onMouseClicked="#submit" prefHeight="37.0" prefWidth="90.0" style="-fx-background-color: #4d4d00; -fx-background-radius: 50px; -fx-border-color: #333300; -fx-border-radius: 50px;" text="LOG IN" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXTextField fx:id="username" labelFloat="true" layoutX="140.0" layoutY="248.0" prefHeight="37.0" prefWidth="232.0" promptText="Username">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="password" labelFloat="true" layoutX="140.0" layoutY="317.0" prefHeight="37.0" prefWidth="232.0" promptText="Password">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXPasswordField>
+            <ImageView id="pic" fx:id="pic" fitHeight="37.0" fitWidth="45.0" layoutX="63.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/Olamijulo/Documents/NetBeansProjects/SchoolManagemntSystem/src/schoolmanagemntsystem/icons/icons8_User_100px_1.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+            <ImageView id="pic" fx:id="pic1" fitHeight="37.0" fitWidth="45.0" layoutX="63.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/password.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+            <JFXButton layoutX="140.0" layoutY="388.0" onAction="#clear" prefHeight="37.0" prefWidth="90.0" style="-fx-background-color: #4d4d00; -fx-background-radius: 50px; -fx-border-color: #333300; -fx-border-radius: 50px;" text="CLEAR" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <ImageView fitHeight="84.0" fitWidth="105.0" layoutX="188.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/lock.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="406.0" layoutY="14.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/close.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label fx:id="error" layoutX="140.0" layoutY="362.0" text="User name or Password incorrect" textFill="#ed4c3ea2" visible="false">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="362.0" layoutY="14.0" onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/Olamijulo/IdeaProjects/Supermarket/images/minimize-white.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
